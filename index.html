@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compantible" content="ie=edge">
+        <style>
+            img{
+                width:150px;
+                height:100px;
+            }
+            table{
+                border-collapse: collapse;
+               width:878px;
+                margin:0 auto;
+
+            }
+            tr:nth-child(even){
+                background: #eee;
+
+            }
+            th{
+                background: #2da2d8;
+                color:#ffffff;
+                
+            }
+            th,td{
+                padding:12px;
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            </style>
+        </head>
+<body>
+    <center>
+    <h2>Fetch Data and image from Json API  </h2>
+    </center>
+    <table>
+     
+<script>
+// fetch data and image  from json api using javascript 
+// #json javascript literals
+fetch("main.json")
+            .then(res => res.json())
+            .then(data => {
+             console.log(data);
+
+             var outputdata="";
+                    
+     //loop start
+data.forEach((company)=>{
+    var img = new Image();
+    img.src = company.Images;
+ 
+    outputdata += `
+  
+<tr>
+<td>${company.name}</td>
+<td>${company.number_of_employees}</td>
+<td>${company.Ceo}</td>
+<td>${company.rating}</td>
+<td><img src='${company.Images}'></td>
+</tr>
+                       
+                     
+    `
+    ;
+                      
+document.getElementById("data").append(img);
+
+})
+
+document.getElementById("data").innerHTML= outputdata;
+
+
+})
+
+</script>
+<thead>
+    <th>Company</th> 
+    <th>No. of Employees</th>  
+    <th>Ceo</th>  
+    <th>Ratings</th>  
+    <th>Image</th>  
+
+
+    
+    <thead>
+   <tbody id="data"></tbody>
+        //****** display data here.. ******//
+            </tbody>
+        </table>
+
+
+
+</body>
+</html>
+-->
+
+<!--
+	Name= Sahil Sutariya
+	Lab 3
+	200446745
+-->
+
+<html>
+<head>
+	<title>Assignment 3</title>
+	<script src="main.js"></script>
+</head>
+
+<body>
+
+<h2>Assignment 3</h2>
+<div id="products">
+            <!-- All JSON data will be populated over here!! -->
+        </div>
+
+</body>
+</html>
